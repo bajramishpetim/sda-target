@@ -14,14 +14,15 @@ spec:
     spec:
       containers:
       - name: backend
-        image: app-backend:v1
+        image: shpetimbajrami/app-backend:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000  
         env:
         - name: MY_SECRET
-          value: ""
+          value: "test123"
         - name: DATABASE_URL
-          value: "your_database_connection_url"
+          value: "./test-db.sqlite"
 ---
 
 apiVersion: v1
